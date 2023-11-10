@@ -1,0 +1,23 @@
+{
+  "name": "webpack-tute",
+  "version": "1.0.0",
+  "description": "Webpack Tutorial",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/N8mare/webpack-tute.git"
+  },
+  "author": "A M Akankshit",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/N8mare/webpack-tute/issues"
+  },
+  "homepage": "https://github.com/N8mare/webpack-tute#readme",
+  "devDependencies": {
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
+  }
+}
