@@ -4,7 +4,7 @@
   "description": "Webpack Tutorial",
   "private": true,
   "scripts": {
-    "webpack": "node node_modules/.bin/webpack"
+    "build": "node node_modules/.bin/webpack"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/N8mare/webpack-tute#readme",
   "devDependencies": {
+    "css-loader": "^6.8.1",
+    "style-loader": "^3.3.3",
     "webpack": "^5.89.0",
     "webpack-cli": "^5.1.4"
   },
