@@ -1,3 +1,20 @@
 .hello {
   color: crimson;
 }
+
+.hello:before {
+  content: "";
+  background-image: url("./resources/cat-icon.svg");
+  background-repeat: no-repeat;
+  background-size: 30px 30px;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  top: 5px;
+}
+
+img {
+  height: 200px;
+  display: block;
+}
