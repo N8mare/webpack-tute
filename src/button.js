@@ -7,7 +7,14 @@ function button() {
   const element = document.createElement("button");
   element.innerHTML = join(["Click", "Me!!"], " ");
 
-  element.onclick = identity;
+  element.onclick = () => {
+    import("./gratitude")
+      .then((_) => {
+        const gratitudeElement = _.gratitudeComponent();
+        element.parentElement.appendChild(gratitudeElement);
+      })
+      .catch(console.error);
+  };
 
   printAndIncrementCount("button");
 
