@@ -1,7 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
-module.exports = {
+const defaultConfig = {
   mode: "production",
   entry: {
     main: "./src/index.js",
@@ -29,4 +29,16 @@ module.exports = {
       },
     ],
   },
+};
+
+const devConfig = {
+  mode: "development",
+  devtool: "inline-source-map",
+};
+
+module.exports = (env) => {
+  if (env.development) {
+    return { ...defaultConfig, ...devConfig };
+  }
+  return defaultConfig;
 };

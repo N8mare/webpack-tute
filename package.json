@@ -4,7 +4,9 @@
   "description": "Webpack Tutorial",
   "private": true,
   "scripts": {
-    "build": "node node_modules/.bin/webpack"
+    "build": "webpack",
+    "build:dev": "npm run build -- --env=development",
+    "dev:watch": "npm run build:dev -- --watch"
   },
   "repository": {
     "type": "git",
