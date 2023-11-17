@@ -4,15 +4,8 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const defaultConfig = {
   mode: "production",
   entry: {
-    main: {
-      import: "./src/index.js",
-      dependOn: "utils",
-    },
-    button: {
-      import: "./src/button.js",
-      dependOn: "utils",
-    },
-    utils: ["./src/utils/index.js", "./src/utils/singleton.js"],
+    main: "./src/index.js",
+    button: "./src/button.js",
   },
   output: {
     filename: "[name].bundle.js",
@@ -37,7 +30,10 @@ const defaultConfig = {
     ],
   },
   optimization: {
-    runtimeChunk: "single",
+    splitChunks: {
+      chunks: "all",
+      minSize: 100,
+    },
   },
 };
 
