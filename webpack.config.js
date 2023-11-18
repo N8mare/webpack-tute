@@ -8,7 +8,7 @@ const defaultConfig = {
     button: "./src/button.js",
   },
   output: {
-    filename: "[name].bundle.js",
+    filename: "[name].[contenthash].bundle.js",
     path: path.resolve(__dirname, "dist"),
     clean: true,
   },
@@ -32,7 +32,18 @@ const defaultConfig = {
   optimization: {
     splitChunks: {
       chunks: "all",
-      minSize: 100,
+      // minSize: 100,
+      cacheGroups: {
+        utils: {
+          test(module) {
+            return module.resource && module.resource.includes("/src/utils");
+          },
+          name: "common",
+          chunks: "all",
+          priority: 1,
+          enforce: true, // To override minSize limit. https://webpack.js.org/plugins/split-chunks-plugin/#splitchunkscachegroupscachegroupenforce
+        },
+      },
     },
   },
 };
