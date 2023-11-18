@@ -1,5 +1,5 @@
-import { join } from "./utils";
-// import { join } from "lodash";
+// import { join } from "./utils";
+import _ from "lodash-es";
 import { printAndIncrementCount } from "./utils/singleton";
 // import "./style.css";
 // import Icon from "./resources/red-white-cat.jpg";
@@ -7,7 +7,7 @@ import { printAndIncrementCount } from "./utils/singleton";
 function component() {
   const element = document.createElement("div");
 
-  element.innerHTML = join(["Hello", "webpack"], " ");
+  element.innerHTML = _.join(["Hello", "webpack"], " ");
   element.classList.add("hello");
 
   // Add the image to our existing div.

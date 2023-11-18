@@ -32,8 +32,15 @@ const defaultConfig = {
   optimization: {
     splitChunks: {
       chunks: "all",
-      // minSize: 100,
+      minSize: 100,
+      // maxSize: 20000,
       cacheGroups: {
+        vendors: {
+          test: /node_modules/,
+          name: "vendors",
+          chunks: "all",
+          maxSize: 2000,
+        },
         utils: {
           test(module) {
             return module.resource && module.resource.includes("/src/utils");
