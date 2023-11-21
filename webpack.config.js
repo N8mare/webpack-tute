@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const NotifyPlugin = require("./plugins/notify-plugin");
 
 module.exports = {
   mode: "production",
@@ -13,6 +14,7 @@ module.exports = {
     clean: true,
   },
   plugins: [
+    new NotifyPlugin(),
     new HtmlWebpackPlugin({
       title: "Webpack Tutorial",
     }),
